@@ -27,4 +27,4 @@ Mempool
     * can prevent gossip spam
 * txfee
     * `FEEPERKB=`bc estimatefee 3` `
-    * `python -c "print 930 * $FEEPERKB * 1.0/4, 'approx. USD per median tx'"`
+    * `python -c "print 960 * $FEEPERKB * 1.0/4, 'approx. USD per median tx'"`

@@ -3,7 +3,7 @@
 
 Network
 ---
-* `bc getpeerinfo | grep subver`
+* `bc getpeerinfo | egrep 'subver|inbound'`
 * `bc addnode`
 * `bc setban`
     * https://0bin.net/paste/ZFEAihJLl8AQRaBx#M8xZGuMyYKZWhjfNLOX4pQsraQys2IedFPr60rB3rJi
@@ -15,6 +15,7 @@ Setting Network Limits
 * `bd ... -listen=0`
 * `bd ... -maxconnections=20`
 * `bd ... -maxuploadtarget=500`
+* `bd ... -blocksonly`
 
 
 Tor

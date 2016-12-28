@@ -15,7 +15,7 @@ What is Bitcoin Core?
 ---
 * continuation of the work of
     Bitcoin's creator
-* what does a it do?
+* what does it do?
     * p2p
     * consensus
     * wallet
@@ -33,7 +33,7 @@ Specific use case
     everyday at 33c3
 * want to use most secure and
     private wallet available
-* => Bitcoin Core + ssh + smartphone
+* => smartphone + ssh + Bitcoin Core
 
 Where do you run it?
 ---
@@ -45,23 +45,24 @@ Where do you run it?
     disk possible
 * preparing the host (example)
     * full disk encryption
-    * ntpdate
+    * set date
     * firewall
-    * systemd
+    * systemd service
 
 How do you get it?
 ---
 * download binary from bitcoin.org
     * `wget https://bitcoin.org/bin/bitcoin-core-0.13.1/bitcoin-0.13.1-x86_64-linux-gnu.tar.gz`
     * `wget https://bitcoin.org/bin/bitcoin-core-0.13.1/SHA256SUMS.asc`
-    * verify signatures
+    * verify signatures with gpg
         * sign my key to get a trust path
-* gitian deterministic builds
+    * gitian deterministic builds
+        * https://github.com/bitcoin-core/gitian.sigs
+* source code releases on github
 
 Starting up bitcoind
 ---
 * bitcoind is the daemon
-* `alias bd='bitcoind'`
 * connects to peers
 * downloads and verifies new blocks
     * initial block download (IBD)
@@ -88,11 +89,11 @@ Configuration
 * the .bitcoin folder
     * bitcoin.conf
     * blocks/
-    * `cat .bitcoin/debug.log | egrep "receive version message|UpdateTip" | tail -n 20`
+    * `cat .bitcoin/debug.log | egrep "receive version message|UpdateTip|Connect total" | tail -n 100`
 * `alias bd="bitcoind"`
 * arguments
     * `bd ... -help`
-    * `bd ... -testnet`
+    * `bd ... -testnet` and `bc ... -regtest`
         * different p2p network and blockchain
     * `bd ... -debug`
     * `bd ... -dbcache=3000`

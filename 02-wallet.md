@@ -6,7 +6,7 @@ Example: Buy bitcoins
 * get new address and print QR code
 ```
 ADDR=`bc getnewaddress`
-qrencode -m 1 -t ansi256 bitcoin:$ADDR`
+qrencode -m 1 -t ansi256 bitcoin:$ADDR
 ```
 
 * check if coins are received
@@ -61,8 +61,8 @@ Offline signing
 Transactions
 ---
 * `bc getrawtransaction`
-    * `bc getrawtransaction f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16 1`
     * requires `bd ... -txindex`
+    * `bc getrawtransaction f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16 1`
     * can't look up "addresses", as there is
       no index for it
 
@@ -89,13 +89,14 @@ Transactions
         * multisig: f.e. need 2 of 3 keys to
           spend
         * creating
-          `bc createmultisig 1 '["$ADDR1", "$ADDR2"]'`
+          `bc createmultisig 1 '["$PK1", "$PK2"]'`
     * offline signing
     * control over which exact coins
       to spend
 
 * `bc listunspent`
 * `bc createrawtransaction`
+    * don't forget to add change!
 * `bc signrawtransaction`
 * `bc submitrawtransaction`
 
