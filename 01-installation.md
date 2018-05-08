@@ -52,8 +52,8 @@ Where do you run it?
 How do you get it?
 ---
 * download binary from bitcoin.org
-    * `wget https://bitcoin.org/bin/bitcoin-core-0.13.1/bitcoin-0.13.1-x86_64-linux-gnu.tar.gz`
-    * `wget https://bitcoin.org/bin/bitcoin-core-0.13.1/SHA256SUMS.asc`
+    * `wget https://bitcoin.org/bin/bitcoin-core-0.16.0/bitcoin-0.16.0-x86_64-linux-gnu.tar.gz`
+    * `wget https://bitcoin.org/bin/bitcoin-core-0.16.0/SHA256SUMS.asc`
     * verify signatures with gpg
         * sign my key to get a trust path
     * gitian deterministic builds
@@ -74,7 +74,7 @@ bitcoin-cli
 ---
 * talks to bitcoind using JSON-RPC
     * `alias bc="bitcoin-cli"`
-* `bc getinfo | egrep "\"version\"|balance|blocks|connections|errors"`
+* `bc -getinfo | egrep "\"version\"|balance|blocks|connections|errors"`
 * `bc help`
 * `bc help sendtoaddress`
 
